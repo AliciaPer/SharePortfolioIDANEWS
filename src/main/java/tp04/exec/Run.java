@@ -57,6 +57,13 @@ public class Run {
         System.out.println("Portefeuille : " + p);
         p.vendre(bnp, 50);
         System.out.println("Portefeuille : " + p);
+        
+        
+        //ajd = j2;
+        //System.out.println("Portefeuille somme total : " + p.valeur(ajd));
+        
+        //somme de toutes les actions
+//        System.out.println("La sommme total de toutes les actions est : " + sum(p));
  
     }
 

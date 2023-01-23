@@ -66,6 +66,10 @@ public class Portefeuille {
         }        
     }
     
+    public void getSomme() {
+//        return this.
+    }
+    
     public String toString() {
         return this.mapLignes.toString();
     }
