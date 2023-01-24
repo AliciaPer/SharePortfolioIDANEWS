@@ -12,8 +12,8 @@ package tp04.metier;
  */
 public class Jour {
 
-    private int annee;
-    private int noJour;
+    private final int annee;
+    private final int noJour;
 
     /**
      * Get the value of annee
@@ -62,6 +62,29 @@ public class Jour {
         if (this.noJour != other.noJour) {
             return false;
         }
+        return true;
+    }
+    
+    public boolean between(Jour j1, Jour j2) {
+        
+        if(this.annee < j1.annee) {
+            return false;
+        }
+        else if(this.annee==j1.annee) {
+            if(this.noJour < j1.noJour) {
+                return false;
+            }
+        }
+        
+        if(this.annee > j2.annee) {
+        return false;
+        }
+        else if(this.annee==j2.annee) {
+            if(this.noJour > j2.noJour) {
+                return false;
+            }
+        }
+        
         return true;
     }
   

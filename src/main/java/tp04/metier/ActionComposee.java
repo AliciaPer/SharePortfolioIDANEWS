@@ -38,5 +38,8 @@ public class ActionComposee extends Action {
         return valeur;
     }
     
+    public float variance(Jour i, Jour j) {
+        return this.valeur(j)-this.valeur(i);
+    }
     
 }

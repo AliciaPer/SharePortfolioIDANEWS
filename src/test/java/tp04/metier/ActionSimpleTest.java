@@ -38,6 +38,22 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(value, result);
     }
     
+    @Test
+    public void testVariance() {
+        final ActionSimple as = new ActionSimple("BNP");
+        final Jour j1 = new Jour(2023,23);
+        final Jour j2 = new Jour(2023,24);
+        final float value1 = 1.05F;
+        final float value2 = 1.3F;
+        
+        as.enrgCours(j1, value1);
+        as.enrgCours(j2, value2);
+        
+        final float result = as.variance(j1, j2);
+        
+        assertEquals(0.25F, result);
+    }
+    
 }
 
 

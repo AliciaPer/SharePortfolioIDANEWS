@@ -5,7 +5,6 @@
  */
 package tp04.exec;
 
-import tp04.metier.Action;
 import tp04.metier.ActionComposee;
 import tp04.metier.ActionSimple;
 import tp04.metier.Jour;
@@ -40,30 +39,26 @@ public class Run {
 
         Portefeuille p;
         p = new Portefeuille();
-        p.acheter(axa, 10);
+        p.acheter(axa, 15, j1);
         System.out.println("Portefeuille : " + p);
-        p.acheter(bnp, 20);
+        p.acheter(bnp, 20, j1);
         System.out.println("Portefeuille : " + p);
-        p.acheter(bqAss, 5);
+        p.acheter(bqAss, 5, j1);
         System.out.println("Portefeuille : " + p);
-        p.acheter(bqAss, 15);
+        p.vendre(axa, 5, j1);
+        System.out.println("Portefeuille : " + p);
+        p.vendre(bnp, 50, j1);
         System.out.println("Portefeuille : " + p);
         System.out.println("Portefeuille à j1 : " + p.valeur(j1));
-        p.vendre(axa, 5);
-        System.out.println("Portefeuille : " + p);
-        p.vendre(axa, 5);
-        System.out.println("Portefeuille : " + p);
-        p.vendre(axa, 5);
-        System.out.println("Portefeuille : " + p);
-        p.vendre(bnp, 50);
-        System.out.println("Portefeuille : " + p);
         
-        
-        //ajd = j2;
-        //System.out.println("Portefeuille somme total : " + p.valeur(ajd));
-        
-        //somme de toutes les actions
-//        System.out.println("La sommme total de toutes les actions est : " + sum(p));
+        p.acheter(bqAss, 15, j2);
+        System.out.println("Portefeuille : " + p);
+        p.vendre(axa, 5, j2);
+        System.out.println("Portefeuille : " + p);
+        p.vendre(axa, 5, j2);
+        System.out.println("Portefeuille : " + p);
+        System.out.println("Portefeuille à j2 : " + p.valeur(j2));
+
  
     }
 

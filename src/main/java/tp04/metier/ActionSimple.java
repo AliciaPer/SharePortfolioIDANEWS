@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package tp04.metier;
 
 import java.util.HashMap;
@@ -16,7 +10,7 @@ import java.util.Map;
 public class ActionSimple extends Action {
 
     // attribut lien
-    private Map<Jour, Cours> mapCours;
+    private final Map<Jour, Cours> mapCours;
     
     // constructeur
     public ActionSimple(String libelle) {
@@ -39,13 +33,23 @@ public class ActionSimple extends Action {
         else 
             return 0; // definition d'une constante possible
     }
+    
+    /**
+     *
+     * @param j1
+     * @param j2
+     * @return
+     */
+    @Override
+    public float variance(Jour j1, Jour j2) {
+        return this.valeur(j2)-this.valeur(j1);
+    }
   
     // encapsulation de la définition de la classe Cours
     private class Cours {
         
-        private Jour jour;
-
-        private float valeur;
+        private final Jour jour;
+        private final float valeur;
 
         public float getValeur() {
             return valeur;

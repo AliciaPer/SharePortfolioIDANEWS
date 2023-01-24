@@ -31,6 +31,8 @@ public abstract class Action {
 
     public abstract float valeur(Jour j);
     
+    public abstract float variance(Jour i, Jour j);
+    
     @Override
     public int hashCode() {
         int hash = 3;
