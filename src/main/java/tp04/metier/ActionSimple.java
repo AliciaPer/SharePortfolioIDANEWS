@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class ActionSimple extends Action {
 
-    // attribut lien
+    // Une action simple est définie par une liste de paires (jour, cours)
     private final Map<Jour, Cours> mapCours;
     
     // constructeur
@@ -20,18 +20,22 @@ public class ActionSimple extends Action {
         this.mapCours = new HashMap();
     }
     
-    // enrg possible si pas de cours pour ce jour
+    // enregistrement possible si on a pas de cours pour ce jour
     public void enrgCours(Jour j, float v) {
         if(this.mapCours.containsKey(j) == false)
             this.mapCours.put(j, new Cours(j, v));
     }
     
+    // Calculer la valeur d'une action  à un jour donné
     @Override
     public float valeur(Jour j) {
+        // Si un cours a été enregistré pour le jour donné
         if(this.mapCours.containsKey(j) == true)
+            // Retourner la valeur
             return this.mapCours.get(j).getValeur();
         else 
-            return 0; // definition d'une constante possible
+            // Sinon retourner 0
+            return 0;
     }
     
     /**
@@ -40,29 +44,10 @@ public class ActionSimple extends Action {
      * @param j2
      * @return
      */
+    // Calculer la variance des valeurs d'une action entre deux jours
     @Override
     public float variance(Jour j1, Jour j2) {
         return this.valeur(j2)-this.valeur(j1);
     }
   
-    // encapsulation de la définition de la classe Cours
-    private class Cours {
-        
-        private final Jour jour;
-        private final float valeur;
-
-        public float getValeur() {
-            return valeur;
-        }
-        
-        public Jour getJour() {
-            return jour;
-        }
-
-        public Cours(Jour jour, float valeur) {
-            this.jour = jour;
-            this.valeur = valeur;
-        }
-
-    }
 }

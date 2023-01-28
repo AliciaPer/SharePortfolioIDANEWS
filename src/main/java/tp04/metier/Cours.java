@@ -11,5 +11,22 @@ package tp04.metier;
  * @author perussel
  */
 public class Cours {
-    
+    // Un cours est la valeur d'une action pour un jour donné
+    private final Jour jour;
+    private final float valeur;
+
+    public float getValeur() {
+        return valeur;
+    }
+
+    public Jour getJour() {
+        return jour;
+    }
+
+    // Constructeur
+    public Cours(Jour jour, float valeur) {
+        this.jour = jour;
+        this.valeur = valeur;
+    }
+
 }

@@ -6,7 +6,7 @@ package tp04.metier;
  */
 
 public class LignePortefeuille {
-
+    // Une ligne de portefeuille est définie par une action et sa quantité
     private final Action action;
     private int qte;
 
@@ -22,6 +22,7 @@ public class LignePortefeuille {
         return this.action;
     }
 
+    // Constructeur
     public LignePortefeuille(Action action, int qte) {
         this.action = action;
         this.qte = qte;

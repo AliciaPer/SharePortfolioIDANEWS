@@ -11,7 +11,7 @@ package tp04.metier;
  * @author perussel
  */
 public class Jour {
-
+    // Un jour est défini par l'année et le numéro du jour dans l'année
     private final int annee;
     private final int noJour;
 
@@ -34,6 +34,7 @@ public class Jour {
         return noJour;
     }
 
+    // Constructeur
     public Jour(int annee, int noJour) {
         this.annee = annee;
         this.noJour = noJour;
@@ -65,26 +66,35 @@ public class Jour {
         return true;
     }
     
+    // Cette méthode permet de vérifier si un jour est entre les deux jours j1 et j2
     public boolean between(Jour j1, Jour j2) {
-        
+        // Si l'année du jour donnée est inférieure à celle du premier jour de l'intervalle
         if(this.annee < j1.annee) {
+            // Alors il est pas entre les deux jours
             return false;
         }
+        // S'il a la meme année que le premier jour d'intervalle
         else if(this.annee==j1.annee) {
+            // S'il vient avant le jour j1
             if(this.noJour < j1.noJour) {
+                // Alors il est pas entre les deux jours
                 return false;
             }
         }
-        
+        // Si l'année du jour donnée est supérieure à celle du deuxieme jour de l'intervalle
         if(this.annee > j2.annee) {
-        return false;
+            // Alors il est pas entre les deux jours
+            return false;
         }
+        // Sinon s'il a la meme année que le deuxieme jour
         else if(this.annee==j2.annee) {
+            // Et qu'il vient aprés le deuxieme jour
             if(this.noJour > j2.noJour) {
+                // Alors il est pas entre les deux jours
                 return false;
             }
         }
-        
+        // S'il est pas dans tous les cas déjà traités, c'est qu'il est entre les deux jours j1 et j2
         return true;
     }
   

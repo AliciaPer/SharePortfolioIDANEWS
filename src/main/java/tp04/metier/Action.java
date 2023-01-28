@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package tp04.metier;
 
 import java.util.Objects;
@@ -14,7 +8,7 @@ import java.util.Objects;
  */
 public abstract class Action {
     
-    private String libelle;
+    private final String libelle;
 
     /**
      * Get the value of libelle
@@ -55,6 +49,11 @@ public abstract class Action {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString() {
         return this.getLibelle();
     }
